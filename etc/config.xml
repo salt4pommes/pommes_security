@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <pommes_security>
+            <redis_config>
+                <host>127.0.0.1</host>
+                <port>6379</port>
+                <database>0</database>
+                <max_connection_tries>1</max_connection_tries>
+                <timeout>2.5</timeout>
+            </redis_config>
+        </pommes_security>
+    </default>
+</config>

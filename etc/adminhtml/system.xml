@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="pommes" translate="label" sortOrder="1000">
+            <label>Pommes</label>
+        </tab>
+        <section id="pommes_security" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Security</label>
+            <tab>pommes</tab>
+            <resource>Pommes_Security::config_security</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable module</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="protection_list" translate="label" type="textarea" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Protection list</label>
+                    <comment>
+                        <![CDATA[
+                            Format:<br/>
+                            action-name|max-requests|max-request-within-seconds|lock-time-when-max-request-reached,<br/><br/>
+                            action-name|max-requests|max-request-within-seconds|lock-time-when-max-request-reached,<br/><br/>
+                            -> New line for each action with comma seperation
+                        ]]>
+                    </comment>
+                </field>
+                <field id="notification_mail" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Notification E-Mail Address</label>
+                    <comment>An email containing ip and action will be sent if someone gets blocked</comment>
+                </field>
+            </group>
+            <group id="redis_config" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Redis</label>
+                <field id="host" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Host</label>
+                </field>
+                <field id="port" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Port</label>
+                </field>
+                <field id="database" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Database</label>
+                </field>
+                <field id="max_connection_tries" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Max connection tries</label>
+                </field>
+                <field id="timeout" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Timeout</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
