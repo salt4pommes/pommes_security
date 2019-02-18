@@ -17,7 +17,7 @@ If maximum was reached, the action is blocked for specified amount of time.
 Run at Magento root folder:
 
 ```bash
-composer require salt4pommes/pommes_security
+composer require pommes/security
 bin/magento module:enable Pommes_Security
 bin/magento setup:upgrade
 ```
